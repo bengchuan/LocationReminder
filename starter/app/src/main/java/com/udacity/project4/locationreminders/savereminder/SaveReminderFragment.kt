@@ -189,6 +189,9 @@ class SaveReminderFragment : BaseFragment() {
 
     @SuppressLint("MissingPermission")
     private fun addGeoFence() {
+        // Checking GeoLocation Permission
+        checkPermissionsAndStartGeofencing()
+
         // Get reminder
         val reminder = _viewModel.getReminder()
         if (!reminder.isValid()) {
